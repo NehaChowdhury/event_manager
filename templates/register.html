@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Register - EventHorizon{% endblock %}
+
+{% block content %}
+<div class="form-card fadeIn">
+    <h2>Register</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+            <label for="event">Event</label>
+            <input type="text" id="event" name="event" required placeholder="Event Name">
+        </div>
+        <button type="submit">Submit Registration</button>
+    </form>
+</div>
+{% endblock %}

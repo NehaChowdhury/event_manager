@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Upcoming Events</h1>
+
+{% if events %}
+<table class="event-table fadeIn">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{ event[1] }}</td>
+            <td>{{ event[2] }}</td>
+            <td>
+                <a href="/register?event={{ event[1] }}" class="btn-join">Join</a>
+                <a href="/edit/{{ event[0] }}" class="btn-icon edit" title="Edit"><i class="fas fa-edit"></i></a>
+                <a href="/delete/{{ event[0] }}" class="btn-icon delete" title="Delete"
+                    onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p style="text-align: center; color: #666;">No upcoming events found. <a href="/admin">Add one?</a></p>
+{% endif %}
+{% endblock %}
