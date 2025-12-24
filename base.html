@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Event Manager{% endblock %}</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar fadeInDown">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">EventHorizon</a>
+            <ul class="nav-links">
+                <li><a href="/">Events</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content fadeIn">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer fadeInUp">
+        <div class="container">
+            <p>&copy; 2025 EventHorizon. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
